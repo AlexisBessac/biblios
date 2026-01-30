@@ -3,36 +3,6 @@
 {% block title %}Biblios{% endblock %}
 
 {% block body %}
-<header class="bg-primary bg-gradient text-white py-5">
-    <div class="container px-4 text-center">
-        <h1 class="fw-bolder display-4">Biblios</h1>
-        <p class="lead">Explorez le catalogue en ligne de la médiathèque de Klow</p>
-        <div class="d-flex justify-content-center gap-3 mt-4">
-            <a class="btn btn-lg btn-light shadow-sm rounded-pill" href="{{ path('app_book_index') }}" title="Parcourir le catalogue">
-                <i class="fas fa-book me-2"></i> Parcourir le catalogue
-            </a>
-            {% if app.user %}
-                {% if is_granted('ROLE_ADMIN') %}
-                    <a class="btn btn-lg btn-warning shadow-sm rounded-pill" href="{{ path('app_admin_books_index') }}" title="Gérer les livres">
-                        <i class="fas fa-cogs me-2"></i> Gérer les livres
-                    </a>
-                {% else %}
-                    <a class="btn btn-lg btn-danger shadow-sm rounded-pill" href="{{ path('app_logout') }}" title="Se déconnecter">
-                        <i class="fas fa-sign-out-alt me-2"></i> Déconnexion
-                    </a>
-                {% endif %}
-            {% else %}
-                <a class="btn btn-lg btn-light shadow-sm rounded-pill" href="{{ path('app_register') }}" title="S'inscrire">
-                    <i class="fas fa-user-plus me-2"></i> S'inscrire
-                </a>
-                <a class="btn btn-lg btn-light shadow-sm rounded-pill" href="{{ path('app_login') }}" title="Se connecter">
-                    <i class="fas fa-sign-in-alt me-2"></i> Se connecter
-                </a>
-            {% endif %}
-        </div>
-    </div>
-</header>
-
 <main>
     <section class="bg-light py-5">
         <div class="container">
